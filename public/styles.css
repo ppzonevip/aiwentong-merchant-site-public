@@ -352,10 +352,31 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 18px 0;
+  margin: 12px 0;
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.pay-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pay-icon.alipay {
+  background: #1677ff;
+}
+
+.pay-icon.wechat {
+  background: #07c160;
 }
 
 .pay-card button {

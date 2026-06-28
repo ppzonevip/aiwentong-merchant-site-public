@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>支付确认页演示 - 黑龙江爱文通科技有限公司</title>
-  <meta name="description" content="黑龙江爱文通科技有限公司线上服务支付确认页演示。">
+  <title>支付确认页 - 黑龙江爱文通科技有限公司</title>
+  <meta name="description" content="黑龙江爱文通科技有限公司线上服务支付确认页。">
   <link rel="icon" href="/brand.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -15,9 +15,9 @@
   </header>
   <main>
     <section class="checkout-title">
-      <p class="eyebrow">Payment Demo</p>
+      <p class="eyebrow">Payment</p>
       <h1>支付确认页</h1>
-      <p>此页面用于展示线上服务交易和支付确认场景，正式订单金额以客户确认的服务范围为准。</p>
+      <p>请确认服务项目、订单金额和支付方式。正式订单金额以客户确认的服务范围为准。</p>
     </section>
     <section class="checkout">
       <div class="order-box">
@@ -45,9 +45,18 @@
           <div><dt>优惠金额</dt><dd>¥0.00</dd></div>
           <div><dt>应付金额</dt><dd>¥99.00</dd></div>
         </dl>
-        <label class="pay-method"><input type="radio" checked> 支付宝</label>
+        <label class="pay-method">
+          <input type="radio" name="payment" checked>
+          <span class="pay-icon alipay">支</span>
+          <span>支付宝</span>
+        </label>
+        <label class="pay-method">
+          <input type="radio" name="payment">
+          <span class="pay-icon wechat">微</span>
+          <span>微信支付</span>
+        </label>
         <button type="button">提交订单</button>
-        <p>演示页面不发起真实扣款，正式付款以支付宝收银台或合同订单为准。</p>
+        <p>提交订单后进入对应支付渠道完成付款，具体金额以确认后的订单为准。</p>
       </aside>
     </section>
   </main>
