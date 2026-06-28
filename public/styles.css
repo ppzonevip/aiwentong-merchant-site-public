@@ -165,6 +165,10 @@ h3 {
 
 .band,
 .pricing,
+.page-title,
+.checkout-title,
+.catalog,
+.checkout,
 .split,
 .contact {
   padding: clamp(54px, 8vw, 100px) clamp(20px, 5vw, 72px);
@@ -219,6 +223,149 @@ h3 {
   display: inline-block;
   margin-bottom: 14px;
   color: var(--gold);
+  font-weight: 800;
+}
+
+.page-title,
+.checkout-title {
+  background: linear-gradient(120deg, #f4f8fb, #ffffff);
+}
+
+.page-title .lead,
+.checkout-title p {
+  max-width: 820px;
+  color: var(--muted);
+}
+
+.catalog {
+  display: grid;
+  gap: 18px;
+}
+
+.catalog article {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 120px 150px;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.catalog img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.catalog .tag {
+  margin-bottom: 6px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.catalog h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.catalog p {
+  color: var(--muted);
+}
+
+.catalog strong {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.checkout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 24px;
+  background: var(--soft);
+}
+
+.order-box,
+.pay-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.order-box {
+  padding: 26px;
+}
+
+.order-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.order-box th,
+.order-box td {
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.order-box th {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.notice {
+  margin-top: 28px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #f7fafc;
+}
+
+.notice p,
+.pay-card p {
+  color: var(--muted);
+}
+
+.pay-card {
+  padding: 24px;
+}
+
+.pay-card dl {
+  margin: 18px 0;
+}
+
+.pay-card div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pay-card dd {
+  color: var(--gold);
+}
+
+.pay-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.pay-card button {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--blue);
+  font: inherit;
   font-weight: 800;
 }
 
@@ -310,6 +457,8 @@ footer a {
   }
 
   .hero,
+  .catalog article,
+  .checkout,
   .split,
   .contact {
     grid-template-columns: 1fr;
