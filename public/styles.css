@@ -164,6 +164,7 @@ h3 {
 }
 
 .band,
+.pricing,
 .split,
 .contact {
   padding: clamp(54px, 8vw, 100px) clamp(20px, 5vw, 72px);
@@ -179,6 +180,7 @@ h3 {
 }
 
 .service-grid,
+.pricing-grid,
 .policy-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -186,6 +188,7 @@ h3 {
 }
 
 .service-grid article,
+.pricing-grid article,
 .policy-grid article,
 .info-list,
 .contact-panel {
@@ -195,15 +198,28 @@ h3 {
 }
 
 .service-grid article,
+.pricing-grid article,
 .policy-grid article {
   padding: 24px;
 }
 
 .service-grid p,
+.pricing-grid p,
 .policy-grid p,
 .split p,
 .contact p {
   color: var(--muted);
+}
+
+.pricing-grid article {
+  border-top: 4px solid var(--green);
+}
+
+.pricing-grid span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-weight: 800;
 }
 
 .split,
@@ -304,6 +320,7 @@ footer a {
   }
 
   .service-grid,
+  .pricing-grid,
   .policy-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -319,6 +336,7 @@ footer a {
   }
 
   .service-grid,
+  .pricing-grid,
   .policy-grid {
     grid-template-columns: 1fr;
   }
