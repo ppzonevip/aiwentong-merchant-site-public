@@ -169,6 +169,7 @@ h3 {
 .checkout-title,
 .catalog,
 .checkout,
+.explain,
 .split,
 .contact {
   padding: clamp(54px, 8vw, 100px) clamp(20px, 5vw, 72px);
@@ -390,6 +391,24 @@ h3 {
   font-weight: 800;
 }
 
+.explain {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  background: #fff;
+}
+
+.explain article {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff, #f7fafc);
+}
+
+.explain p:last-child {
+  color: var(--muted);
+}
+
 .split,
 .contact {
   display: grid;
@@ -480,6 +499,7 @@ footer a {
   .hero,
   .catalog article,
   .checkout,
+  .explain,
   .split,
   .contact {
     grid-template-columns: 1fr;
@@ -497,18 +517,137 @@ footer a {
 }
 
 @media (max-width: 620px) {
+  body {
+    background: #f6f9fc;
+  }
+
+  .site-header {
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff;
+  }
+
   .brand span {
     font-size: 15px;
   }
 
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  nav {
+    gap: 14px;
+    font-size: 14px;
+  }
+
   h1 {
-    font-size: 38px;
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .hero,
+  .band,
+  .pricing,
+  .page-title,
+  .checkout-title,
+  .catalog,
+  .checkout,
+  .explain,
+  .split,
+  .contact {
+    padding: 34px 16px;
+  }
+
+  .hero {
+    gap: 24px;
+    background: #fff;
+  }
+
+  .hero-visual img {
+    max-height: 260px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
   }
 
   .service-grid,
   .pricing-grid,
   .policy-grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalog article {
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+  }
+
+  .catalog img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .catalog strong,
+  .catalog .primary {
+    grid-column: 1 / -1;
+  }
+
+  .catalog .primary {
+    min-height: 44px;
+  }
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pay-card {
+    order: -1;
+    padding: 18px;
+  }
+
+  .order-box {
+    padding: 18px;
+  }
+
+  .order-box table,
+  .order-box thead,
+  .order-box tbody,
+  .order-box tr,
+  .order-box th,
+  .order-box td {
+    display: block;
+  }
+
+  .order-box thead {
+    display: none;
+  }
+
+  .order-box td {
+    padding: 10px 0;
+  }
+
+  .pay-method {
+    min-height: 54px;
+    font-size: 16px;
+  }
+
+  .pay-card button {
+    min-height: 52px;
+    font-size: 17px;
   }
 
   .info-list div {
