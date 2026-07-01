@@ -288,6 +288,73 @@ h3 {
   background: var(--soft);
 }
 
+.test-pay {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 24px;
+  padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 72px);
+  background: var(--soft);
+}
+
+.test-pay-main,
+.test-pay-actions {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 26px;
+}
+
+.test-summary {
+  margin: 20px 0 0;
+}
+
+.test-summary div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.test-summary dd {
+  word-break: break-word;
+}
+
+.notice-line {
+  margin: 24px 0 0;
+  color: var(--muted);
+}
+
+.pay-choice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  margin: 12px 0;
+}
+
+.pay-choice:hover {
+  border-color: var(--blue);
+}
+
+.pay-choice span:last-child {
+  display: grid;
+  gap: 2px;
+}
+
+.pay-choice small {
+  color: var(--muted);
+}
+
+.action-button {
+  width: 100%;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+}
+
 .order-box,
 .pay-card {
   border: 1px solid var(--line);
@@ -499,6 +566,7 @@ footer a {
   .hero,
   .catalog article,
   .checkout,
+  .test-pay,
   .explain,
   .split,
   .contact {
@@ -560,6 +628,7 @@ footer a {
   .checkout-title,
   .catalog,
   .checkout,
+  .test-pay,
   .explain,
   .split,
   .contact {
@@ -612,6 +681,20 @@ footer a {
   .checkout {
     display: flex;
     flex-direction: column;
+  }
+
+  .test-pay {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .test-pay-actions {
+    order: -1;
+  }
+
+  .test-summary div {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .pay-card {

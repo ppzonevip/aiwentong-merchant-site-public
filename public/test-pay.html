@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0.1 元支付测试 - 黑龙江爱文通科技有限公司</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/brand.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/brand.png" alt="" width="42" height="42">
+      <span>黑龙江爱文通科技有限公司</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/services.html">服务项目</a>
+      <a href="/payment-demo.html">支付说明</a>
+      <a href="/test-pay.html">支付测试</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="checkout-title">
+      <p class="eyebrow">Payment Test</p>
+      <h1>0.1 元支付测试</h1>
+      <p>用于验证爱文通支付中心的支付宝和微信支付入口。测试订单金额固定为 0.10 元。</p>
+    </section>
+
+    <section class="test-pay">
+      <article class="test-pay-main">
+        <p class="eyebrow">Test Order</p>
+        <h2>测试订单</h2>
+        <dl class="test-summary">
+          <div><dt>订单号</dt><dd id="orderNo">生成中...</dd></div>
+          <div><dt>服务项目</dt><dd>支付通道测试服务</dd></div>
+          <div><dt>测试金额</dt><dd>0.10 CNY</dd></div>
+          <div><dt>支付中心</dt><dd>pay.aiwentong.com</dd></div>
+        </dl>
+        <p class="notice-line">支付宝会跳转到官方收银台。微信入口会进入微信 Native 接口；当前微信资料缺少 AppID，补齐后即可生成扫码支付。</p>
+      </article>
+
+      <aside class="test-pay-actions">
+        <h2>选择支付方式</h2>
+        <a class="pay-choice alipay-choice" id="alipayLink" href="#">
+          <span class="pay-icon alipay">支</span>
+          <span><strong>支付宝支付</strong><small>0.10 元，跳转官方收银台</small></span>
+        </a>
+        <a class="pay-choice wechat-choice" id="wechatLink" href="#">
+          <span class="pay-icon wechat">微</span>
+          <span><strong>微信支付</strong><small>入口已保留，待补微信 AppID 后可扫码</small></span>
+        </a>
+        <button class="secondary action-button" type="button" id="newOrder">换一个测试订单号</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 黑龙江爱文通科技有限公司</span>
+    <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">黑ICP备18003475号-1</a>
+  </footer>
+
+  <script>
+    const orderNoEl = document.getElementById("orderNo");
+    const alipayLink = document.getElementById("alipayLink");
+    const wechatLink = document.getElementById("wechatLink");
+    const newOrderButton = document.getElementById("newOrder");
+
+    function createOrderNo() {
+      const now = new Date();
+      const pad = (value, size = 2) => String(value).padStart(size, "0");
+      const stamp = [
+        now.getFullYear(),
+        pad(now.getMonth() + 1),
+        pad(now.getDate()),
+        pad(now.getHours()),
+        pad(now.getMinutes()),
+        pad(now.getSeconds()),
+        pad(now.getMilliseconds(), 3),
+      ].join("");
+      return `WWWTEST010${stamp}`;
+    }
+
+    function refreshLinks() {
+      const orderNo = createOrderNo();
+      const encoded = encodeURIComponent(orderNo);
+      orderNoEl.textContent = orderNo;
+      alipayLink.href = `https://pay.aiwentong.com/api/pay/alipay?order_no=${encoded}`;
+      wechatLink.href = `https://pay.aiwentong.com/api/pay/wechat/native?order_no=${encoded}`;
+    }
+
+    newOrderButton.addEventListener("click", refreshLinks);
+    refreshLinks();
+  </script>
+</body>
+</html>
